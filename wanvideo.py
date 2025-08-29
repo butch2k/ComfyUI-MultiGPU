@@ -89,7 +89,7 @@ class WanVideoModelLoader:
             
             logging.debug(f"[MultiGPU] Calling original WanVideo loader")
             result = original_loader.loadmodel(model, base_precision, load_device, quantization,
-                                              compile_args, attention_mode, block_swap_args, lora, vram_management_args, vace_model, fantasytalking_model, multitalk_model)
+                                              compile_args, attention_mode, block_swap_args, lora, vram_management_args, None, vace_model, fantasytalking_model, multitalk_model, None)
             
             if result and len(result) > 0 and hasattr(result[0], 'model'):
                 model_obj = result[0]
